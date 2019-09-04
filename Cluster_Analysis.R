@@ -17,6 +17,8 @@ head(z)
 distance <- dist(z)
 distance
 print(distance,digits=2)
+
+#Cluster Dendrogram with compeate linkage
 hc.cl <- hclust(distance)
 hc.cl
 attributes(hc.cl)
@@ -44,6 +46,4 @@ plot(silhouette(cutree(hc.cl,3),distance))
 #K-means Clustering
 kc  <- kmeans(z,3)
 kc
-kc$cluster
-kc$centers
 plot(Petal.Length~Petal.Width,data,col=kc$cluster)
